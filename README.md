@@ -33,7 +33,7 @@ typeof array === 'object'; // arrays are actually just objects under the hood
 
 ```javascript
 var array = [];
-Array.isArray(array); // This does the right thing and makes sure arary is actually an array and not just a vanilla object
+Array.isArray(array); // This does the right thing and makes sure array is actually an array and not just a vanilla object
 ```
 ### Arrays
 
@@ -64,7 +64,7 @@ for (var key in array) {
 }
 ```
 
-Despite their weirdness, arrays do have some nice features, mostly documented in the linked intro.  One thing that isn't documented there is the "splat" operator, ... (just an ellipsis), which is useful in created both new arrays an objects.
+Despite their weirdness, arrays do have some nice features, mostly documented in the linked intro.  One thing that isn't documented there is the "splat" operator, ... (just an ellipsis), which is useful in creating both new arrays and new objects.
 
 ```javascript
 var array = [2];
