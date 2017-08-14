@@ -6,9 +6,13 @@ First off, all Javascript is valid Typescript, in the same way that all Java is 
 
 Secondly, when you're debugging code in the browser, which you'll be doing, you're going to be looking at Javascript.  And not just any old Javascript--it's going to be some pretty old-school Javascript, because not all browsers are up to date with supporting the latest Javascript features (I'm looking at you, IE 11).  We have some sweet build tools that make this a bit better, but the fact remains that even if you're writing very nice Java-like Typescript classes, you're going to be looking at old functional-style Javascript "classes" in your browser's console (more on those later).
 
+# Acknowledgement
+
+Much of the first 3 exercises in this tutorial, as well as the jasmine framework for running tests, was built by David Laing and Greg Malcolm and modified for this tutorial.  Their original repository can be found at https://github.com/mrdavidlaing/javascript-koans, which is released under the [MIT license](licences/koans-license).  Their work is much appreciated and serves as a ground from which this larger tutorial could be built.
+
 # "Lecture" material
 
-There's actually some decent content on the web introducing Javascript, so we won't be reinventing the wheel here.  You're probably familiar with at least one other programming language (no worries if not, it might actually make this part easier for you!), and if you are, there are some features of Javascript that will just feel downright weird.  Below in this section is a link to a pretty nice intro to the basic language features of Javascript, but before you click on it, there are a few things to pay special attention to.  We'll do this in a few sections broken up by exercises (exercises described in a below section of this README).
+There's actually some decent content on the web introducing Javascript, so we won't be reinventing the wheel here.  You're probably familiar with at least one other programming language (no worries if not, it might actually make this part easier for you!), and if you are, there are some features of Javascript that will just feel downright weird.  Below in this section is a link to a pretty nice intro to the basic language features of Javascript, but before you click on it, there are a few things to pay special attention to.  We'll do this in a few sections broken up by exercises.
 
 So here's the link to the tutorial, but do read each section of the README here before diving into that section of the tutorial: https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 
@@ -85,7 +89,7 @@ functionThatTakesABoolean(!!someVariable);
 
 The first ! forces Javascript to evaluate the truthiness of someVariable and return its opposite, and then the second returns it back to its original truthiness value.
 
-With these oddities in mind, read through the linked intro and then take on the first set of exercises in <PLACEHOLDER> before moving on to the next section.
+With these oddities in mind, read through the linked intro and then take on the first two sets of exercises.
 
 ## Javascript Functions and Classes
 
@@ -249,7 +253,7 @@ valueSetter.value === undefined;
 
 bind allows you to enforce the values of parameters to a method, and the first argument to bind always gets bound to this.  You can also bind other parameters, which is sometimes useful, but we won't be going over that in this tutorial.
 
-Finish up reading the intro, and you'll be ready to tackle the second set of exercises in <PLACEHOLDER>.
+Finish up reading the intro, and you'll be ready to tackle exercises 3 and 4 (coming soon).
 
 ## Promises and Asynchronous Operations
 
