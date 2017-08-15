@@ -1,4 +1,4 @@
-describe("About Functional Methods", function () {
+describe("About Functional Programming", function () {
 
   function onlyOddNumbers(array) {
     // FILL_ME_IN
