@@ -14,6 +14,16 @@ describe("About The Final Exam", function() {
 
   /*********************************************************************************/
 
+  // use standard for and if control structures
+  function productsWithNoNutsOrMushroomsImperative(products) {
+    // FILL_ME_IN
+  }
+
+  // use functional methods such as map, filter any
+  function productsWithNoNutsOrMushroomsFunctional(products) {
+    // FILL_ME_IN
+  }
+
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
     expect(productsWithNoNutsOrMushroomsImperative(products))
       .toEqual(referenceProductsWithNoNutsOrMushroomsImperative(products));
@@ -26,7 +36,22 @@ describe("About The Final Exam", function() {
 
   /*********************************************************************************/
 
-   it("should count the ingredient occurrence (imperative)", function () {
+  // should return an object that has a property for each
+  // ingredient whose value is the number of times that
+  // ingredient appears in the collection of products
+  function countIngredientsImperative(products) {
+    // FILL_ME_IN
+  }
+
+  // should return an object that has a property for each
+  // ingredient whose value is the number of times that
+  // ingredient appears in the collection of products
+  // Hint: consider using reduce to flatten an array of arrays
+  function countIngredientsFunctional(products) {
+    // FILL_ME_IN
+  }
+
+  it("should count the ingredient occurrence (imperative)", function () {
     expect(countIngredientsImperative(products))
       .toEqual(referenceCountIngredientsImperative(products));
   });
@@ -37,6 +62,22 @@ describe("About The Final Exam", function() {
   });
 
   /*********************************************************************************/
+
+  // adds up the natural numbers up to the first parameter.
+  // The caller may optionally pass more arguments, and then
+  // the sum is restricted to numbers divisible by any of the
+  // additionaly arguments
+  function sumOfNumbersDivisibleByAnyImperative(upTo) {
+    // FILL_ME_IN
+  }
+
+  // adds up the natural numbers up to the first parameter.
+  // The caller may optionally pass more arguments, and then
+  // the sum is restricted to numbers divisible by any of the
+  // additionaly arguments
+  function sumOfNumbersDivisibleByAnyFunctional(upTo) {
+    // FILL_ME_IN
+  }
 
   it("should add all the natural numbers up to 1000 that are multiples of 3 or 5 (imperative)", function () {
     expect(sumOfNumbersDivisibleByAnyImperative(1000, 3, 5))
