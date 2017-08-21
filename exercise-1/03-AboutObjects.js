@@ -1,6 +1,25 @@
 describe("About Objects", function () {
 
-  describe("Properties", function () {
+  describe("should know object basics", function() {
+
+    it("should know object and placeholder types", function () {
+      expect(typeof {}).toBe(FILL_ME_IN);
+      expect(typeof undefined).toBe(FILL_ME_IN);
+      expect(typeof null).toBe(FILL_ME_IN);      
+    });
+
+    it("should know object truthiness", function () {
+      var objects = [undefined, null, {}, {'one': 1}];
+      // fill in true or false for each matching object above
+      var truthiness = [FILL_ME_IN, FILL_ME_IN, FILL_ME_IN, FILL_ME_IN];
+      for (var i = 0; i < objects.length; i++){
+        expect(Boolean(objects[i])).toBe(truthiness[i]);
+      }
+    });
+
+  });
+
+  describe("should know objects have properties", function () {
     var megalomaniac;
 
     beforeEach(function () {
@@ -8,19 +27,35 @@ describe("About Objects", function () {
     });
 
     it("should confirm objects are collections of properties", function () {
+      var sidekick = 'henchwoman';
+      // with different ways to access
+      expect(megalomaniac['mastermind']).toBe(FILL_ME_IN);
       expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
+      expect(megalomaniac[sidekick]).toBe(FILL_ME_IN);
+      // but what do you get when the property doesn't exist?
+      expect(megalomaniac.nemesis).toBe(FILL_ME_IN);      
     });
 
     it("should confirm that properties are case sensitive", function () {
       expect(megalomaniac.henchwoman).toBe(FILL_ME_IN);
       expect(megalomaniac.henchWoman).toBe(FILL_ME_IN);
     });
-  });
 
+    it("should confirm that properties always keyed as strings", function () {
+      megalomaniac[2] = 'two';
+      megalomaniac[3 < 4] = 'five';
+      megalomaniac[{object: true}] = 'bad idea';
+      expect(megalomaniac['2']).toBe(FILL_ME_IN);
+      expect(megalomaniac['true']).toBe(FILL_ME_IN);
+      // all objects have the same toString() output by default
+      expect(megalomaniac[{}]).toBe(FILL_ME_IN);
+    });
+
+  });
 
   it("should know properties that are functions act like methods", function () {
     var megalomaniac = {
-      mastermind : "Brain",
+      mastermind: "Brain",
       henchman: "Pinky",
       battleCry: function (noOfBrains) {
         return "They are " + this.henchman + " and the" +
