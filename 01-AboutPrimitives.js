@@ -93,7 +93,7 @@ describe('About Primitives', function() {
     // Among strings, numbers, and booleans, what are falsy values?
     var falsy = [FILL_ME_IN, FILL_ME_IN, FILL_ME_IN, FILL_ME_IN, null, undefined];
     // Hint: 2 number values, 1 boolean value, one string value
-    for (var i = 0; i < falsey.length; i++) {
+    for (var i = 0; i < falsy.length; i++) {
       expect(falsy[i]).toBeFalsy();
     }
     // all other values are truthy (including empty arrays and objects)
