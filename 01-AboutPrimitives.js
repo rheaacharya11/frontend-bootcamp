@@ -27,8 +27,10 @@ describe('About Primitives', function() {
     expect(intMath).toBe(FILL_ME_IN);
 
     // there are some special number values that usually indicate errors
+    // One is NaN...
+    expect(isNaN(4 - "three")).toBe(true);  // NaN !== NaN, so need to use isNaN(x) to test for it
+    // But there are other special values...
     expect(4 / 0).toBe(FILL_ME_IN);
-    expect(4 - "three").toBe(FILL_ME_IN);
   });
 
   it('should understand strings', function() {
