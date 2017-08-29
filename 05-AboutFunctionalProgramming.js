@@ -51,7 +51,7 @@ describe("About Functional Programming", function () {
     // FILL_ME_IN
   }
 
-  it("should use 'all' to test whether all items pass condition", function () {
+  it("should use 'every' to test whether all items pass condition", function () {
     expect(areAllEven([1,2,3])).toEqual(referenceAreAllEven([1,2,3]));
     expect(areAllEven([2,4,6])).toEqual(referenceAreAllEven([2,4,6]));
   });
@@ -61,7 +61,7 @@ describe("About Functional Programming", function () {
     // FILL_ME_IN
   }
 
-  it("should use 'any' to test if any items passes condition" , function () {
+  it("should use 'some' to test if any items passes condition" , function () {
     expect(areAnyEven([1,2,3])).toEqual(referenceAreAnyEven([1,2,3]));
     expect(areAnyEven([1,5,3])).toEqual(referenceAreAnyEven([1,5,3]));
   });
