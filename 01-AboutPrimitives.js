@@ -21,7 +21,7 @@ describe('About Primitives', function() {
     // and sometimes you might have expected integer math
     expect(-5 / 4).toBe(FILL_ME_IN);
         
-    // there is a Math library that may be of assitance here
+    // there is a Math library that may be of assistance here
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
     var intMath = Math.trunc(-5 / 4);
     expect(intMath).toBe(FILL_ME_IN);

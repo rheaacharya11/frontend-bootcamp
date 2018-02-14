@@ -2,7 +2,7 @@ describe("About Arrays", function() {
 
   it("should create arrays", function() {
     var emptyArray = [];
-    // Considered by most to be a design mistake - http://javascript.crockford.com/remedial.html
+    // Considered by most to be a design mistake that arrays don't have their own type
     expect(typeof(emptyArray)).toBe(FILL_ME_IN);
     // Alternative test available since ES5
     expect(Array.isArray(emptyArray)).toBe(FILL_ME_IN);
@@ -51,7 +51,7 @@ describe("About Arrays", function() {
     sparseArray[4] = "four";
     expect(sparseArray.length).toBe(FILL_ME_IN);    
 
-    // you can also assign to length (which is more often done accidently)
+    // you can also assign to length (which is more often done accidentally)
     // which has various side-effects
     sparseArray.length = 3;
     expect(sparseArray.length).toBe(FILL_ME_IN);
@@ -141,7 +141,7 @@ describe("About Arrays", function() {
   it("should know that arrays are also objects", function() {
     var arr = ['zero', 'one', 'two', 'three'];
 
-    //as with any object, you add additional properities (key/value pairs)
+    //as with any object, you add additional properties (key/value pairs)
     arr['foo'] = 'bar';
     arr['2'] = 'X';
         

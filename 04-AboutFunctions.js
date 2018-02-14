@@ -38,7 +38,7 @@ describe("About Functions", function() {
     expect(parentfunction()).toBe(FILL_ME_IN);
   });
 
-  it("should use lexical scoping to synthesise functions", function () {
+  it("should use lexical scoping to synthesize functions", function () {
 
     function makeMysteryFunction(makerValue)
     {
