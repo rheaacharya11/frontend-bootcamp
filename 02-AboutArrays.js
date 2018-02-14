@@ -114,8 +114,9 @@ describe("About Arrays", function() {
 
   it("should know about array toString", function() {
     var arr = [1, 'two', [3, 4]];
-    // array toString will give a list of values, but 'quotes'
-    // around strings, no spaces after ,s, or []s around the array
+    // array toString will give a list of values, but 
+    // no quotes around string values, no spaces after commas, 
+    // and no []s around the array
     expect(arr.toString()).toBe(FILL_ME_IN);
   });
 

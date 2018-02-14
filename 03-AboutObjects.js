@@ -47,7 +47,7 @@ describe("About Objects", function () {
       megalomaniac[{object: true}] = 'bad idea';
       expect(megalomaniac['2']).toBe(FILL_ME_IN);
       expect(megalomaniac['true']).toBe(FILL_ME_IN);
-      // all objects have the same toString() output by default
+      // all objects have the same toString() output by default: "[object Object]"
       expect(megalomaniac[{}]).toBe(FILL_ME_IN);
     });
 
@@ -89,7 +89,7 @@ describe("About Objects", function () {
       megalomaniac = {
         mastermind: "The Monarch",
         henchwoman: "Dr Girlfriend",
-        theBomb: true
+        theBomb: "yes"
       };
     });
 

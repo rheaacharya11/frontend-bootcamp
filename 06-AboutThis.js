@@ -16,26 +16,6 @@ describe("About This", function() {
     expect(numberGiver2["giveNumber"]()).toEqual(FILL_ME_IN);
   });
 
-  it("should use => to bind this to the creator of an anonymous funtion", function() {
-    var lengthChecker1 = {
-      length: 10,
-      lengthsToCheck: [1,3,5],
-      areAllShorter: function() {
-        return this.lengthsToCheck.every(function(lengthToCheck) { return lengthToCheck < this.length});
-      }
-    }
-    expect(lengthChecker1.areAllShorter()).toEqual(FILL_ME_IN);
-
-    var lengthChecker2 = {
-      length: 10,
-      lengthsToCheck: [1,3,5],
-      areAllShorter: function() {
-        return this.lengthsToCheck.every((lengthToCheck) => { return lengthToCheck < this.length});
-      }
-    }
-    expect(lengthChecker2.areAllShorter()).toEqual(FILL_ME_IN);
-  });
-
   it("should be able to use bind to ensure this gets bound to the right object", function() {
     var numberGiver1 = {
       number: 1,
@@ -73,4 +53,28 @@ describe("About This", function() {
     subComponent.onUserClicksButton();
     expect(component.state.text).toBe(FILL_ME_IN);
   });
+
+  // looking ahead to ES6 features
+  it("should use => to bind this to the creator of an anonymous function", function() {
+    var lengthChecker1 = {
+      length: 10,
+      lengthsToCheck: [1,3,5],
+      areAllShorter: function() {
+        // the argument to 'every' is an anonymous function (not a method)... 
+        // so what is 'this' in this.length going to refer to?
+        return this.lengthsToCheck.every(function(lengthToCheck) { return lengthToCheck < this.length});
+      }
+    }
+    expect(lengthChecker1.areAllShorter()).toEqual(FILL_ME_IN);
+
+    var lengthChecker2 = {
+      length: 10,
+      lengthsToCheck: [1,3,5],
+      areAllShorter: function() {
+        return this.lengthsToCheck.every((lengthToCheck) => { return lengthToCheck < this.length});
+      }
+    }
+    expect(lengthChecker2.areAllShorter()).toEqual(FILL_ME_IN);
+  });
+
 });
