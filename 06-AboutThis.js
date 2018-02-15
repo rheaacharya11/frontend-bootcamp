@@ -2,18 +2,18 @@ describe("About This", function() {
 
   it("should use the object to the left of the dot as 'this'", function() {
     var numberGiver1 = {number: 1, giveNumber: function() { return this.number; }};
-    expect(numberGiver1.giveNumber()).toEqual(FILL_ME_IN);
+    expect(numberGiver1.giveNumber()).toEqual(1);
 
     var numberGiver2 = {number: 2, giveNumber: numberGiver1.giveNumber};
-    expect(numberGiver2.giveNumber()).toEqual(FILL_ME_IN);
+    expect(numberGiver2.giveNumber()).toEqual(2);
   });
 
   it("should use the object to the left of the brackets as 'this'", function() {
     var numberGiver1 = {number: 1, giveNumber: function() { return this.number; }};
-    expect(numberGiver1["giveNumber"]()).toEqual(FILL_ME_IN);
+    expect(numberGiver1["giveNumber"]()).toEqual(1);
 
     var numberGiver2 = {number: 2, giveNumber: numberGiver1.giveNumber};
-    expect(numberGiver2["giveNumber"]()).toEqual(FILL_ME_IN);
+    expect(numberGiver2["giveNumber"]()).toEqual(2);
   });
 
   it("should be able to use bind to ensure this gets bound to the right object", function() {
@@ -26,7 +26,7 @@ describe("About This", function() {
     };
 
     var numberGiver2 = {number: 2, giveNumber: numberGiver1.getNewGiver()};
-    expect(numberGiver2.giveNumber()).toEqual(FILL_ME_IN);
+    expect(numberGiver2.giveNumber()).toEqual(1);
   });
 
   it("should use bind to give state transition callbacks (this is roughly in the style of React)", function() {
@@ -36,7 +36,7 @@ describe("About This", function() {
       setState: function(newState) { this.state = newState;  /* do stuff */ this.render(); }
     };
 
-    var stateTransitionFunction = FILL_ME_IN;
+    var stateTransitionFunction = component.setState.bind(component);
 
     var subComponent = {
       textField: "Hello, World",
@@ -51,7 +51,7 @@ describe("About This", function() {
     expect(component.state.text).toBe("Hello, World");
     subComponent.textField = "User changed this";
     subComponent.onUserClicksButton();
-    expect(component.state.text).toBe(FILL_ME_IN);
+    expect(component.state.text).toBe('User changed this');
   });
 
   // looking ahead to ES6 features
@@ -65,7 +65,7 @@ describe("About This", function() {
         return this.lengthsToCheck.every(function(lengthToCheck) { return lengthToCheck < this.length});
       }
     }
-    expect(lengthChecker1.areAllShorter()).toEqual(FILL_ME_IN);
+    expect(lengthChecker1.areAllShorter()).toEqual(false);
 
     var lengthChecker2 = {
       length: 10,
@@ -74,7 +74,7 @@ describe("About This", function() {
         return this.lengthsToCheck.every((lengthToCheck) => { return lengthToCheck < this.length});
       }
     }
-    expect(lengthChecker2.areAllShorter()).toEqual(FILL_ME_IN);
+    expect(lengthChecker2.areAllShorter()).toEqual(true);
   });
 
 });

@@ -1,10 +1,14 @@
 describe("About Functional Programming", function () {
 
+  // The functions we'll ask you to use here (filter, map, reduce, forEach, etc)
+  // are now available as Array methods.  See details/docs here for more info:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
   function onlyOddNumbers(array) {
-    // FILL_ME_IN
+    return array.filter(function(v) { return v % 2 === 1 });
   }
 
-  it("should use filter to return array items that meet a criteria", function () {
+  it("should use 'filter' to return array items that meet a criteria", function () {
     expect(onlyOddNumbers([1,2,3])).toEqual(referenceOnlyOddNumbers([1,2,3]));
     expect(onlyOddNumbers([1,2,4])).toEqual(referenceOnlyOddNumbers([1,2,4]));
     expect(onlyOddNumbers([1,2,4,3])).toEqual(referenceOnlyOddNumbers([1,2,4,3]));
@@ -12,7 +16,9 @@ describe("About Functional Programming", function () {
 
 
   function incrementAllBy(array, value) {
-    // FILL_ME_IN
+    return array.map(function (v) {
+      return v + value;
+    })
   }
 
   it("should use 'map' to transform each element", function () {
@@ -22,7 +28,9 @@ describe("About Functional Programming", function () {
 
 
   function productOf(array) {
-    // FILL_ME_IN
+    return array.reduce(function (total, next) {
+      return total *= next;
+    }, 1);
   }
 
   it("should use 'reduce' to update the same result on each iteration", function () {
@@ -32,7 +40,7 @@ describe("About Functional Programming", function () {
 
 
   function callOnEveryElement(numbers, callback) {
-    // FILL_ME_IN
+    numbers.forEach(callback);
   }
 
   function captureForEach(array, forEachFunction) {
@@ -48,7 +56,7 @@ describe("About Functional Programming", function () {
 
 
   function areAllEven(array) {
-    // FILL_ME_IN
+    return array.every(function (value) { return value % 2 === 0 });
   }
 
   it("should use 'every' to test whether all items pass condition", function () {
@@ -58,7 +66,7 @@ describe("About Functional Programming", function () {
 
 
   function areAnyEven(array) {
-    // FILL_ME_IN
+    return array.some(function (value) { return value % 2 === 0 });
   }
 
   it("should use 'some' to test if any items passes condition" , function () {
@@ -68,7 +76,9 @@ describe("About Functional Programming", function () {
 
 
   function sumOfSquaresOfEvens(array) {
-    // FILL_ME_IN
+    var evens = array.filter(function (value) { return value % 2 === 0; });
+    var squaresOfEvens = evens.map(function (value) { return value * value; });
+    return squaresOfEvens.reduce(function (acc, value) { return acc + value; }, 0);
   }
 
   it("should use filter, map, reduce to compute a complex operation", function() {
