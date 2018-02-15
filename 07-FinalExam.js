@@ -63,18 +63,18 @@ describe("About The Final Exam", function() {
 
   /*********************************************************************************/
 
-  // adds up the natural numbers up to the first parameter.
+  // adds up the natural numbers up to the first parameter, inclusive.
   // The caller may optionally pass more arguments, and then
   // the sum is restricted to numbers divisible by any of the
-  // additionaly arguments
+  // additional arguments
   function sumOfNumbersDivisibleByAnyImperative(upTo) {
     // FILL_ME_IN
   }
 
-  // adds up the natural numbers up to the first parameter.
+  // adds up the natural numbers up to the first parameter, inclusive.
   // The caller may optionally pass more arguments, and then
   // the sum is restricted to numbers divisible by any of the
-  // additionaly arguments
+  // additional arguments
   function sumOfNumbersDivisibleByAnyFunctional(upTo) {
     // FILL_ME_IN
   }
