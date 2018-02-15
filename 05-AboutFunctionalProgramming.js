@@ -1,5 +1,9 @@
 describe("About Functional Programming", function () {
 
+  // The functions we'll ask you to use here (filter, map, reduce, forEach, etc)
+  // are now available as Array methods.  See details/docs here for more info:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array  
+
   function onlyOddNumbers(array) {
     // FILL_ME_IN
   }
