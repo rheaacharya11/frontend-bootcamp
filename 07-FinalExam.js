@@ -37,6 +37,11 @@ describe("About The Final Exam", function() {
   function productsWithNoNutsOrMushroomsFunctional(products) {
     return products.filter(p => !(p.containsNuts || p.ingredients.some(i => i === "mushrooms")));
   }
+  
+  // Alternative functional solution
+  function productsWithNoNutsOrMushroomsFunctional_ALT(products) {
+    return products.filter(p => !(p.ingredients.includes("mushrooms") || p.containsNuts) )
+  }
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
     expect(productsWithNoNutsOrMushroomsImperative(products))
@@ -77,6 +82,14 @@ describe("About The Final Exam", function() {
         });
         return ingredients;
       }, {});
+  }
+  
+  // Alternative functional solution
+  function countIngredientsFunctional_ALT(products) {
+    counter = []
+    list_ingredients = products.map(p => p.ingredients).reduce((a,b) => a.concat(b))
+    uniq_ingredients = [...new Set(list_ingredients)].forEach(i => counter[i] = list_ingredients.filter(curr_i => curr_i == i ).length)
+    return counter
   }
 
   it("should count the ingredient occurrence (imperative)", function () {
@@ -129,6 +142,13 @@ describe("About The Final Exam", function() {
         return sum;
       }
     }, 0);
+  }
+  
+  // Alternative functional solution
+  function sumOfNumbersDivisibleByAnyFunctional_ALT(upTo) {
+    divisble = Array.prototype.slice.call(arguments,1)
+    sum = Array(upTo+1).fill().map((_,i) => i).filter(i => arguments.length==1 || divisble.some(function (factor) { return i % factor === 0; })).reduce((a,b)=>a+b)
+    return sum
   }
 
   it("should add all the natural numbers up to 1000 that are multiples of 3 or 5 (imperative)", function () {
