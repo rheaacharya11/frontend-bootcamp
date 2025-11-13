@@ -16,7 +16,6 @@ describe("About The Final Exam", function() {
 
   // use standard for and if control structures
   function productsWithNoNutsOrMushroomsImperative(products) {
-    // FILL_ME_IN
   }
 
   // use functional methods such as map, filter any

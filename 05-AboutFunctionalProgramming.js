@@ -5,7 +5,11 @@ describe("About Functional Programming", function () {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array  
 
   function onlyOddNumbers(array) {
+<<<<<<< HEAD
     // FILL_ME_IN
+=======
+    return array.filter((number) => number % 2 == 1)
+>>>>>>> main
   }
 
   it("should use the 'filter' function to return array items that meet a criteria", function () {
@@ -16,7 +20,11 @@ describe("About Functional Programming", function () {
 
 
   function incrementAllBy(array, value) {
+<<<<<<< HEAD
     // FILL_ME_IN
+=======
+    array.map((element) => element + value)
+>>>>>>> main
   }
 
   it("should use the 'map' function to transform each element", function () {
