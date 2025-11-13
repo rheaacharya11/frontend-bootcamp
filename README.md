@@ -1,0 +1,17 @@
+> **Part of [fe-bootcamp](https://github.palantir.build/education/fe-bootcamp)**
+
+# fe-javascript-tutorial
+
+This is a collection of simple koans to help you learn the basics of the Javascript language. 
+
+### Instructions
+
+Open `ExerciseRunner.html` in your browser.  Then complete the tests in each numbered .js file. Do this by replacing `FILL_ME_IN` with the appropriate value in each test, or by writing the methods or classes that are empty except for a `FILL_ME_IN` comment. Eventually, all the tests should pass in `ExerciseRunner.html`
+
+### Solutions
+
+If you get particularly stuck, there are sample solutions for the harder coding parts in the `reference-solution/` folder and answers for everything on a separate [`sample-solution`](https://github.palantir.build/education/fe-javascript-basics/compare/sample-solution) branch.
+
+### Acknowledgements
+
+Many of the exercises in this tutorial, as well as the Jasmine test setup, was built by David Laing and Greg Malcolm and modified for this tutorial.  Their original repository can be found at <https://github.com/mrdavidlaing/javascript-koans>, which is released under the [MIT license](licences/koans-license).  Their work is much appreciated.
