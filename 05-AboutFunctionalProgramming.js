@@ -5,11 +5,7 @@ describe("About Functional Programming", function () {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array  
 
   function onlyOddNumbers(array) {
-<<<<<<< HEAD
-    // FILL_ME_IN
-=======
     return array.filter((number) => number % 2 == 1)
->>>>>>> main
   }
 
   it("should use the 'filter' function to return array items that meet a criteria", function () {
@@ -20,11 +16,7 @@ describe("About Functional Programming", function () {
 
 
   function incrementAllBy(array, value) {
-<<<<<<< HEAD
-    // FILL_ME_IN
-=======
-    array.map((element) => element + value)
->>>>>>> main
+    return array.map((element) => element + value)
   }
 
   it("should use the 'map' function to transform each element", function () {
@@ -34,7 +26,7 @@ describe("About Functional Programming", function () {
 
 
   function productOf(array) {
-    // FILL_ME_IN
+    return array.reduce((accumulator, value) =>  accumulator * value)
   }
 
   it("should use the 'reduce' function to update the same result on each iteration", function () {
@@ -44,7 +36,7 @@ describe("About Functional Programming", function () {
 
 
   function callOnEveryElement(numbers, callback) {
-    // FILL_ME_IN
+    return numbers.forEach((element) => callback(element))
   }
 
   function captureForEach(array, forEachFunction) {
@@ -60,7 +52,7 @@ describe("About Functional Programming", function () {
 
 
   function areAllEven(array) {
-    // FILL_ME_IN
+    return array.every((element) => element % 2 == 0)
   }
 
   it("should use the 'every' function to test whether all items pass condition", function () {
@@ -70,7 +62,7 @@ describe("About Functional Programming", function () {
 
 
   function areAnyEven(array) {
-    // FILL_ME_IN
+    return array.some((element) => element % 2 == 0)
   }
 
   it("should use the 'some' function to test if any items passes condition" , function () {
@@ -80,7 +72,9 @@ describe("About Functional Programming", function () {
 
 
   function sumOfSquaresOfEvens(array) {
-    // FILL_ME_IN
+    evens = array.filter((element) => element % 2 == 0)
+    squares = evens.map((element) => element * element)
+    return squares.reduce((acc, value) => acc + value, 0)
   }
 
   it("should use the 'filter', 'map', and 'reduce' functions to compute a complex operation", function() {

@@ -16,11 +16,23 @@ describe("About The Final Exam", function() {
 
   // use standard for and if control structures
   function productsWithNoNutsOrMushroomsImperative(products) {
+    let valid_pizzas = [];
+    for (let pizza of products){
+      console.log(pizza.name)
+     if (
+      pizza.containsNuts === false && 
+      !pizza.ingredients.includes("mushrooms")
+     ) {
+      valid_pizzas.push(pizza);
+      } 
+    }
+    return valid_pizzas
   }
 
   // use functional methods such as map, filter any
   function productsWithNoNutsOrMushroomsFunctional(products) {
-    // FILL_ME_IN
+    nutFree = products.filter(pizza => pizza.containsNuts === false)
+    return nutFree.filter(pizza => pizza.ingredients.includes("mushrooms") == false)
   }
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
@@ -39,15 +51,32 @@ describe("About The Final Exam", function() {
   // ingredient whose value is the number of times that
   // ingredient appears in the collection of products
   function countIngredientsImperative(products) {
-    // FILL_ME_IN
+    const inventory = {};
+    for (let pizza of products){
+      for (let ingredient of pizza.ingredients){
+      if (inventory.hasOwnProperty(ingredient)){
+        inventory[ingredient] += 1;
+      }
+      else {
+        inventory[ingredient] = 1;
+      }
+    }
   }
+  return inventory;
+}
 
   // should return an object that has a property for each
   // ingredient whose value is the number of times that
   // ingredient appears in the collection of products
   // Hint: consider using reduce to flatten an array of arrays
   function countIngredientsFunctional(products) {
-    // FILL_ME_IN
+    return products
+      .map(pizza => pizza.ingredients)
+      .reduce((a, b) => a.concat(b), [])
+      .reduce((counts, ingredient) => {
+        counts[ingredient] = (counts[ingredient] || 0) + 1;
+        return counts;
+      }, {}); // initial value of accumulator
   }
 
   it("should count the ingredient occurrence (imperative)", function () {
@@ -66,16 +95,27 @@ describe("About The Final Exam", function() {
   // The caller may optionally pass more arguments, and then
   // the sum is restricted to numbers divisible by any of the
   // additional arguments
-  function sumOfNumbersDivisibleByAnyImperative(upTo) {
-    // FILL_ME_IN
+  function sumOfNumbersDivisibleByAnyImperative(upTo, ... divisors) {
+    let acc = 0;
+    for (let curr = 1; curr <= upTo; curr ++){
+      for (let divisor of divisors){
+        if (curr % divisor === 0){
+          acc += curr;
+          break;
+        }
+      }
+    }
+    return acc;
   }
 
   // adds up the natural numbers up to the first parameter, inclusive.
   // The caller may optionally pass more arguments, and then
   // the sum is restricted to numbers divisible by any of the
   // additional arguments
-  function sumOfNumbersDivisibleByAnyFunctional(upTo) {
-    // FILL_ME_IN
+  function sumOfNumbersDivisibleByAnyFunctional(upTo, ...divisors) {
+    return Array.from({length: upTo}, (_, i) => i + 1)
+      .filter(n => divisors.some(divisor => n % divisor === 0))
+      .reduce((acc, n) => acc + n, 0);
   }
 
   it("should add all the natural numbers up to 1000 that are multiples of 3 or 5 (imperative)", function () {
