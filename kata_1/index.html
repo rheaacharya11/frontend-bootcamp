@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatter - local client</title>
+  </head>
+  <body>
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/chatter-service.js"></script>
+
+    <div id="app">
+      <div id="messages"></div>
+    </div>
+
+    <script>
+      var $box = document.getElementById('messages');
+      var contents = '';
+      for (var i = chatter.history.length - 1; i >= 0; i--) {
+        var msg = chatter.history[i];
+        contents += '<div class="message">';
+        contents += '<span class="from">' + msg.from + '</span> - ';
+        contents += '<span class="text">' + msg.text + '</span>';
+        contents += '</div>';
+      }
+      $box.innerHTML = contents;
+      
+      // If you prefer JQuery, you can replace the code above above with this code instead
+      //
+      // var $box = $('#messages')
+      // for (var i = chatter.history.length - 1; i >= 0; i--) {
+      //   var msg = chatter.history[i];
+      //   var $row = $('<div class="message">');
+      //   $row.append('<span class="from">' + msg.from + '</span> - ');
+      //   $row.append('<span class="text">' + msg.text + '</span>');
+      //   $box.append($row);
+      // }
+    </script>
+  </body>
+</html>
