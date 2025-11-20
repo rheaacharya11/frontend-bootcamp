@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        color: #2a5885;
+        letter-spacing: 1px;
+      }
+
+      .message {
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      }
+
+      .message:nth-child(even){
+        background-color: #f1f1f1;
+      }
+
+      .message:nth-child(odd){
+        background-color: #e7f3ff;
+      }
+
+      .from {
+        font-weight: bold;
+        color: #2a5885;
+      }
+
+      body {
+        font-family: 'Segoe UI', 'Arial', sans-serif;
+      }
+
+      .timestamp {
+        color: #aaa;
+        font-size: 0.85em;
+        margin-right: 20px;
+        font-style: italic;
+        white-space: nowrap;
+      }
+    </style>
     <title>Chatter - local client</title>
   </head>
   <body>
+    <h1>Welcome!</h1>
+    
     <script src="lib/jquery-3.2.1.min.js"></script>
     <script src="lib/chatter-service.js"></script>
 
     <div id="app">
+      <button id="update-btn">Update</button>
       <div id="messages"></div>
     </div>
 
@@ -16,13 +61,44 @@
       var contents = '';
       for (var i = chatter.history.length - 1; i >= 0; i--) {
         var msg = chatter.history[i];
+        var formattedTime = moment(msg.timestamp).format('h:mm A');
         contents += '<div class="message">';
-        contents += '<span class="from">' + msg.from + '</span> - ';
+        contents += '<span class="timestamp">' + formattedTime + '</span>';
+        contents += '<span class="from" data-username="' + msg.from + '">'+ msg.from + '</span>: ';
         contents += '<span class="text">' + msg.text + '</span>';
         contents += '</div>';
       }
       $box.innerHTML = contents;
-      
+
+      // find all usernames on page
+      var usernames = document.querySelectorAll('.from');
+
+      // loop through each one
+      for (var i = 0; i < usernames.length; i++){
+        
+        // click listener for each username
+        usernames[i].addEventListener('click', function(e) {
+
+          // get uernmae from data attribute
+          var username = e.target.getAttribute('data-username');
+
+          // call filter function
+          filterByUser(username);
+        })
+      }      
+
+      var state = {
+        filterUser: null
+      }
+
+      function filterByUser(username){
+        state.filterUser = username;
+        renderMessages();
+      }
+
+      function renderMessages(){
+
+      }
       // If you prefer JQuery, you can replace the code above above with this code instead
       //
       // var $box = $('#messages')
